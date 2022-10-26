@@ -25,3 +25,10 @@ jobs:
       run: chmod +x gradlew
     - name: Buid with Gradle
       run: ./gradlew build
+    - name: Build and push to docker Image
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with: 
+        image: yemanehadis/demo-app
+        registry: docker.io
+        username: ${{secrets.DOCKER_USERNAME}}
+        password: ${{secrets.DOCKER_PASSWORD}}
