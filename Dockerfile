@@ -1,8 +1,8 @@
-FROM openjdk:8-jre-alpine
+FROM openjdk:17.0-jdk-slim
 
 EXPOSE 8080
 
-COPY ./build/libs/my-app-1.0-SNAPSHOT.jar /usr/app/
-WORKDIR /usr/app
+COPY ./build/libs/CI-CD-With-Nana-0.0.1-SNAPSHOT.jar /app.jar
+#WORKDIR /usr/app.jar
 
-ENTRYPOINT ["java", "-jar", "my-app-1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "CI-CD-With-Nana-0.0.1-SNAPSHOT.jar"]
